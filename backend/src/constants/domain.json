@@ -56,5 +56,22 @@
     "running",
     "completed",
     "failed"
-  ]
+  ],
+  "protection": {
+    "fields": [
+      "moisture"
+    ],
+    "bins": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      100
+    ],
+    "epsilon_per_release": 0.5,
+    "total_epsilon": 2.0,
+    "note": "受保护分布仅发布分箱噪声计数，并由同一份非负计数推导ECDF与分位数。"
+  }
 }

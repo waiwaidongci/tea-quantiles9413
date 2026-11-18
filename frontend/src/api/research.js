@@ -1,3 +1,4 @@
 import {request,post} from './client.js';
 export const studies={list:()=>request('/studies'),create:x=>post('/studies',x),rows:id=>request(`/studies/${id}/observations`),save:(id,x,row)=>row?request(`/studies/${id}/observations/${row}`,{method:'PUT',body:JSON.stringify(x)}):post(`/studies/${id}/observations`,x),remove:(id,row)=>request(`/studies/${id}/observations/${row}`,{method:'DELETE'})};
 export const runs={list:()=>request('/runs'),create:x=>post('/runs',x),get:id=>request(`/runs/${id}`),review:(id,note)=>post(`/runs/${id}/review`,{note}),export:id=>request(`/runs/${id}/export`)};
+export const protection={info:id=>request(`/studies/${id}/protection`),policy:(id,x)=>post(`/studies/${id}/protection`,x),list:id=>request(`/studies/${id}/protected-releases`),create:(id,x)=>post(`/studies/${id}/protected-releases`,x),get:id=>request(`/protected-releases/${id}`),retry:id=>post(`/protected-releases/${id}/retry`),export:id=>request(`/protected-releases/${id}/export`)};

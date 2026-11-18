@@ -6,7 +6,7 @@ from src.config.domain import DOMAIN
 from src.models.user import User
 from src.models.study import Study
 from src.models.observation import Observation
-from src.models import run,review,audit
+from src.models import run,review,audit,protected
 from src.utils.security import hash_password
 
 def seed():
