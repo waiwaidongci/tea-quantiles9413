@@ -1,0 +1,2 @@
+import {esc,fmt} from '../../utils/format.js';
+export function table(headers,rows){return `<div class="table-wrap"><table><thead><tr>${headers.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.length?rows.map(row=>`<tr>${row.map(v=>`<td>${v?.html??esc(fmt(v))}</td>`).join('')}</tr>`).join(''):`<tr><td colspan="${headers.length}">尚无记录。先创建业务批次，录入观测，再提交分析。</td></tr>`}</tbody></table></div>`;}

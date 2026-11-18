@@ -1,0 +1,2 @@
+export function formObject(form){return Object.fromEntries(new FormData(form));}
+export function bindForm(id,action){const form=document.getElementById(id);if(!form)return;form.onsubmit=async e=>{e.preventDefault();const button=form.querySelector('button[type=submit]');if(button)button.disabled=true;try{await action(formObject(form),form);}catch(error){document.getElementById('notice').textContent=error.message;}finally{if(button)button.disabled=false;}};}
